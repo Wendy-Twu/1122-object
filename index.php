@@ -33,13 +33,13 @@ function speed(){
 //實例化(instance)
 $cat=new Animal('cat','Kitty','white');
 
-echo $cat->type;
-echo $cat->name;
-echo $cat->hair_color;
+echo $cat->getName();
+
 echo $cat->run();
 echo $cat->speed();
 
-
+$cat->getName('Mary');
+echo $cat->getName();
 
 
 
