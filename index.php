@@ -28,18 +28,65 @@ function run(){
 function speed(){
     echo $this->name. 'is running at 20km/h';
 }
+public function getName(){
+    return $this->name;
+  } 
+
+  public function setName($name){
+        $this->name=$name;
+  } 
 
 }
 //實例化(instance)
 $cat=new Animal('cat','Kitty','white');
 
+//echo $cat->type;
 echo $cat->getName();
-
+//echo $cat->hair_color;
 echo $cat->run();
 echo $cat->speed();
+//print_r($cat->feet);
 
-$cat->getName('Mary');
+echo $cat->setName('Mary');
 echo $cat->getName();
+
+?>
+<h1>繼承</h1>
+<?php
+
+class Cat extends Animal implements Behavior{
+    protected $type='cat';
+    public $name='Judy';
+    function _construct($hair__color){
+        $this->hair_color=$hair_color;
+    }
+     function jump(){
+        echo $this->name . "jumpping 2m";
+     }
+}
+
+Interface Behavior{
+    public function run();
+    public function speed();
+    public function jump();
+}
+
+
+
+
+$mycat=new Cat('white');
+
+echo $mycat->getName();
+echo  "<br>";
+echo $mycat->run();
+echo  "<br>";
+echo $mycat->speed();
+echo  "<br>";
+$mycat->getName('judy');
+echo  "<br>";
+echo $mycat->getName();
+
+echo  "<br>";
 
 
 
